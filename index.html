@@ -27,7 +27,7 @@
               </p>
               <p>
                 My research interests lie in 3D vision, robotics manipulation and reinforcement learning. 
-                Recently, my project is related to transparent object pose estimation and manipulation
+                Recently, my project is related to transparent object pose estimation and manipulation.
               </p>
               <p style="text-align:center">
                 <a href="data/huijiezh-CV.pdf">CV</a> &nbsp/&nbsp
@@ -46,6 +46,9 @@
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>News</heading>
+            <p style="text-align:left;font-size:small;">
+              [08/2022] Our work on TransNet was accepted by ECCV2022 Workshop!
+            </p>
             <p style="text-align:left;font-size:small;">
               [07/2022] Our work on <a href="https://arxiv.org/abs/2203.03890">Clearpose</a>  was accepted by ECCV2022!
             </p>
@@ -67,6 +70,49 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <!-- TransNet -->
+          <tr onmouseout="transnet_stop()" onmouseover="transnet_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='transnet_image'>
+                  <img src='images/transnet_after.png' width="160"></div>
+                <img src='images/transnet_before.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function transnet_start() {
+                  document.getElementById('transnet_image').style.opacity = "1";
+                }
+    
+                function transnet_stop() {
+                  document.getElementById('transnet_image').style.opacity = "0";
+                }
+                transnet_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a >
+                <papertitle>TransNet: Category-Level Transparent Object Pose Estimation</papertitle>
+              </a>
+              <br>
+              <strong>Huijie Zhang</strong>, 
+              <a href="https://topipari.com/">Anthony Opipari</a>,
+              <a href="https://sites.google.com/umich.edu/xiaotong-chen/home">Xiaotong Chen</a>, <br>
+              <a href="https://jiyuezh.github.io/">Jiyue Zhu</a>,
+              <a href="https://zerenyu.github.io/">Zeren Yu</a>, 
+              <a href="https://ocj.name/">Odest Chadwicke Jenkins</a>,
+              <br>
+              <em>ECCV Workshop</em>, 2022
+              <br>
+              <a href="https://topipari.com/static/media/TransNet.471f9ed0.pdf">paper</a>
+              /<a href="https://progress.eecs.umich.edu/projects/transnet/">website</a>
+              <p></p>
+              <p>
+                We proposed TransNet, a two-stage pipeline that learns to estimate category-level transparent object pose using localized depth completion and surface normal estimation. 
+              </p>
+            </td>
+          </tr>
+
+          <!-- ClearPose -->
           <tr onmouseout="clearpose_stop()" onmouseover="clearpose_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -92,7 +138,7 @@
               <br>
               <a href="https://sites.google.com/umich.edu/xiaotong-chen/home">Xiaotong Chen</a>,
               <strong>Huijie Zhang</strong>, 
-							Zeren Yu, <br>
+							<a href="https://zerenyu.github.io/">Zeren Yu</a>, <br>
               <a href="https://topipari.com/">Anthony Opipari</a>,
               <a href="https://ocj.name/">Odest Chadwicke Jenkins</a>,
               <br>
@@ -103,13 +149,13 @@
               /<a href="https://progress.eecs.umich.edu/projects/clearpose/#cite">website</a>
               <p></p>
               <p>
-              We collect a large-scale transparent object dataset with RGB-D and annotated poses. 
-              And we benchmark transparent object depth completion and poes estimation on this dataset.
+              We collected a large-scale transparent object dataset with RGB-D and annotated poses. 
+              And we benchmarked transparent object depth completion and poes estimation on this dataset.
               </p>
             </td>
           </tr>
 					
-
+          <!-- ProgressLabeller -->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div >
@@ -123,7 +169,7 @@
               <br>
               <a href="https://sites.google.com/umich.edu/xiaotong-chen/home">Xiaotong Chen</a>,
               <strong>Huijie Zhang</strong>, 
-							Zeren Yu, <br>
+							<a href="https://zerenyu.github.io/">Zeren Yu</a>, <br>
               <a href="https://scholar.google.com/citations?user=D8nfug0AAAAJ&hl=en">Stanley Lewis</a>,
               <a href="https://ocj.name/">Odest Chadwicke Jenkins</a>,
               <br>
@@ -134,7 +180,7 @@
               <p></p>
               <p>
               ProgressLabeller is an efficient 6D pose annotation method. It is also the first open source tools compatible with transparent object. 
-              It is implemented as a blender Add-on, more user-friendly for using.
+              It was implemented as a blender Add-on, more user-friendly for using.
               </p>
             </td>
           </tr>
@@ -218,12 +264,12 @@
                   Minecraft</papertitle>
               </a>
               <br>
-              <strong>Huijie Zhang</strong>, Phil Kangle Mu, Ying Jiang, Sihang Wei,
+              <strong>Huijie Zhang</strong>, <a href="https://scholar.google.com/citations?user=3nL-yukAAAAJ&hl=en">Phil Kangle Mu</a>, Ying Jiang, Sihang Wei,
               <br>
               <a href="https://github.com/huijieZH/Deep-reinforcement-learning-on-Minecraft">github</a>
               <p></p>
 
-              <p>This Project uses Deep Q-learning from demonstration to teach agent cutting trees in Minecraft Environment</p>
+              <p>This Project useed Deep Q-learning from demonstration to teach agent cutting trees in Minecraft Environment</p>
             </td>
           </tr>
 
