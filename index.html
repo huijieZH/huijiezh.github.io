@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -21,21 +21,20 @@
               <p style="text-align:center">
                 <name>Huijie Zhang</name>
               </p>
-              <p>I am an incoming Ph.D. student at <a href="https://ece.engin.umich.edu/">University of Michigan, Ann Arbor</a>, supervised by <a href="https://qingqu.engin.umich.edu/">Prof. Qing Qu</a>. </p>
+              <p>I am an Ph.D. student at <a href="https://ece.engin.umich.edu/">University of Michigan, Ann Arbor</a>, supervised by <a href="https://qingqu.engin.umich.edu/">Prof. Qing Qu</a>. </p>
               <p>
                 Previously, I obtained my Bachelor's degree in Mechanical Engineering 
                 from <a href="http://english.hust.edu.cn/">Huazhong university of Science and Technology</a>, 
                 advised by <a href="http://faculty.hust.edu.cn/wuzhigang/zh_CN/index.htm">Prof. Zhigang Wu</a>; Master's degree in Mechanical Engineering and Electrical and Computer Engineering from <a href="https://ece.engin.umich.edu/">University of Michigan, Ann Arbor</a>, advised by <a href="https://web.eecs.umich.edu/~ocj/">Prof. Chad Jenkins</a>
               </p>
               <p>
-                My research interests lie in generative mode and diffusion model. My previous works are related to 3D vision, robotics manipulation and reinforcement learning. 
-                Recently, my project is related to diffusion model.
+                My research interests lie in generative model and diffusion model. Recently, my project is related the <strong>empirical and theoretical analysis of reproducibility</strong> in diffusion model, and its applications related to <strong>training efficiency</strong>, <strong>controllable generation</strong> and <strong>privacy</strong>. My previous works are related to 3D vision, robotics manipulation and reinforcement learning.
               </p>
               <p>
-                [Updated in 07/2023]
+                [Updated in 02/2024]
               </p>
               <p style="text-align:center">
-                <a href="data/huijiezh-CV.pdf">CV</a> &nbsp/&nbsp
+                <!-- <a href="data/huijiezh-CV.pdf">CV</a> &nbsp/&nbsp -->
                 <a href="https://scholar.google.com/citations?user=W9Mplc4AAAAJ&hl=en&oi=ao">Google Scholar</a> &nbsp/&nbsp
                 <a href="https://github.com/huijieZH/">Github</a>
               </p>
@@ -51,6 +50,12 @@
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>News</heading>
+            <p style="text-align:left;font-size:small;">
+              [02/2024] Our work on <a href="https://arxiv.org/abs/2312.09181">Multi-stage Diffusion Model</a> was accepted by CVPR2024!
+            </p>
+            <p style="text-align:left;font-size:small;">
+              [10/2023] Our work on <a href="https://arxiv.org/abs/2310.05264">Diffusion Model Reproducibility</a> was accepted by <a href="https://diffusionworkshop.github.io/">NeurIPS2023 Workshop</a>, received <strong> best paper award </strong>!
+            </p>
             <p style="text-align:left;font-size:small;">
               [08/2022] Our work on <a href="https://arxiv.org/abs/2208.10002">TransNet</a> was accepted by ECCV2022 Workshop!
             </p>
@@ -75,15 +80,78 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <!-- Multistage -->
+          <tr onmouseout="multistage_stop()" onmouseover="multistage_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div >
+                <img src='images/multistage.png' width="250">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2312.09181">
+                <papertitle>Improving Training Efficiency of Diffusion Models via Multi-Stage Framework
+                  and Tailored Multi-Decoder Architecture</papertitle>
+              </a>
+              <br>
+              <strong>Huijie Zhang</strong>, 
+              <a href="https://scholar.google.com/citations?user=ybsmKpsAAAAJ&hl=en">Yifu Lu</a>, 
+              <a href="https://sites.google.com/view/ismailalkhouri/about">Ismail Alkhouri</a>, 
+              <a href="https://sites.google.com/site/sairavishankar3/">Saiprasad Ravishankar</a>, <br>
+              <a href="https://sites.google.com/view/dogyoonsong/home">Dogyoon Song</a>,
+              <a href="https://qingqu.engin.umich.edu/">Qing Qu</a>
+              <br>
+              <em>CVPR</em>, 2024
+              <br>
+              <a href="https://arxiv.org/abs/2312.09181">arXiv</a> 
+              <p></p>
+              <p>
+                In this study, we significantly enhance the training and sampling efficiency of diffusion models
+                through a novel multi-stage framework. This method divides the time interval into several stages,
+                using a specialized multi-decoder U-net architecture that combines time-specific models with a
+                common encoder for all stages.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Reproducibility -->
+          <tr onmouseout="reproducibility_stop()" onmouseover="reproducibility_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div >
+                <img src='images/reproducibility.png' width="250">
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2310.05264">
+                <papertitle>The Emergence of Reproducibility and Consistency in Diffusion Models</papertitle>
+              </a>
+              <br>
+              <strong>Huijie Zhang</strong>, 
+              <a href="https://scholar.google.com/citations?user=O3Df4PwAAAAJ&hl=zh-CN">Jinfan Zhou</a>,
+              <a href="https://scholar.google.com/citations?user=ybsmKpsAAAAJ&hl=en">Yifu Lu</a>, 
+              <a href="https://www.linkedin.com/in/minzhe-guo/">Minzhe Guo</a>, <br>
+              <a href="https://peng8wang.github.io/">Peng Wang</a>, 
+              <a href="https://liyueshen.engin.umich.edu/">Liyue Shen</a>,
+              <a href="https://qingqu.engin.umich.edu/">Qing Qu</a>
+              <br>
+              <em>NeurIPS Workshop</em>, 2023 (<strong>best paper award</strong>)
+              <br>
+              <a href="https://arxiv.org/abs/2310.05264">arXiv</a> 
+              <p></p>
+              <p>
+                We investigate an intriguing and prevalent phenomenon of diffusion models: given the same starting noise input and a deterministic sampler, different diffusion models often yield remarkably similar outputs.
+              </p>
+            </td>
+          </tr>
+
           <!-- TransNet -->
           <tr onmouseout="transnet_stop()" onmouseover="transnet_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div >
-                <img src='images/transnet.png' width="160">
+                <img src='images/transnet.png' width="250">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a >
+              <a href="https://arxiv.org/abs/2208.10002">
                 <papertitle>TransNet: Category-Level Transparent Object Pose Estimation</papertitle>
               </a>
               <br>
@@ -107,11 +175,11 @@
 
           <!-- ClearPose -->
           <tr onmouseout="clearpose_stop()" onmouseover="clearpose_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
+            <td style="padding:20px;width:25%;vertical-align:middle;">
               <div class="one">
                 <div class="two" id='clearpose_image'>
-                  <img src='images/clearpose_after.png' width="160"></div>
-                <img src='images/clearpose_before.png' width="160">
+                  <img src='images/clearpose_after.png' width="250"></div>
+                <img src='images/clearpose_before.png' width="250">
               </div>
               <script type="text/javascript">
                 function clearpose_start() {
@@ -124,7 +192,7 @@
                 clearpose_stop()
               </script>
             </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:20px;width:75%;vertical-align:middle;">
               <a href="https://arxiv.org/abs/2203.03890">
                 <papertitle>ClearPose: Large-scale Transparent Object Dataset and Benchmark</papertitle>
               </a>
@@ -144,7 +212,7 @@
               <p>
               We collected a large-scale transparent object dataset with RGB-D and annotated poses. 
               And we benchmarked transparent object depth completion and poes estimation on this dataset.
-              </p>
+              </p>            
             </td>
           </tr>
 					
@@ -152,7 +220,7 @@
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div >
-                <img src='images/progresslabeller.png' width="160">
+                <img src='images/progresslabeller.png' width="250">
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -186,7 +254,7 @@
                 <source src="images/nerf_supervision.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div>
-                <img src='images/nerf_supervision.jpg' width="160">
+                <img src='images/nerf_supervision.jpg' width="320">
               </div>
               <script type="text/javascript">
                 function nerfsuper_start() {
@@ -237,8 +305,8 @@
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='minecraft_image'>
-                  <img src='images/minecraft.gif' width="160"></div>
-                <img src='images/minecraft.png' width="160">
+                  <img src='images/minecraft.gif' width="250"></div>
+                <img src='images/minecraft.png' width=250">
               </div>
               <script type="text/javascript">
                 function minecraft_start() {
@@ -252,7 +320,7 @@
               </script>
             </td>
             
-            <td style="padding:20px;width:75%;vertical-align:middle">
+            <td style="padding:20px;width:60%;vertical-align:middle">
 							<a href="https://github.com/huijieZH/Deep-reinforcement-learning-on-Minecraft">
                 <papertitle>Deep Q-learning from demonstration on
                   Minecraft</papertitle>
