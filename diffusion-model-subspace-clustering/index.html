@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="In this work, we provide theoretical insights into the connection between diffusion model and subspace clustering. The connection shed light into the transition of diffusion model from memorization to generalization and the mechanism it breaks the curse of dimensionality.">
+  <meta property="og:title" content="Diffusion Models Learn Low-Dimensional Distributions via Subspace Clustering"/>
+  <meta property="og:description" content="In this work, we provide theoretical insights into the connection between diffusion model and subspace clustering. The connection shed light into the transition of diffusion model from memorization to generalization and the mechanism it breaks the curse of dimensionality."/>
+  <meta property="og:url" content="https://www.huijiezh.com/reproducibility&generalizability/index.html"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/unionspace.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Diffusion Models Learn Low-Dimensional Distributions via Subspace Clustering">
+  <meta name="twitter:description" content="In this work, we provide theoretical insights into the connection between diffusion model and subspace clustering. The connection shed light into the transition of diffusion model from memorization to generalization and the mechanism it breaks the curse of dimensionality.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/unionspace.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="diffusion model, low dimensionality, subspace clustering, phase transition, semantic direction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Diffusion Model Reproducibility</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Diffusion Model Learns Low-Dimensional Distributions via Subspace Clustering</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://peng8wang.github.io/" target="_blank">Peng Wang</a><sup>1*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://www.huijiezh.com/" target="_blank">Huijie Zhang</a><sup>1*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://la0ka1.github.io/" target="_blank">Zekai Zhang</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://chicychen.github.io/" target="_blank">Siyi Chen</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://people.eecs.berkeley.edu/~yima/" target="_blank">Yi Ma</a><sup>2</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://qingqu.engin.umich.edu/" target="_blank">Qing Qu</a><sup>1</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Department of Electrical and Computer Engineering, University of Michigan<br>
+                    <span class="author-block"><sup>2</sup>Department of Computer Science, the University of Hong Kong<br>
+                    <!-- <b>ICML 2024</b><br><b>NeurIPS 2023 Workshop</b> (<b style="color: #C70039">best paper award</b>)</span> -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2409.02426" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                        </a>
+                      </span>
+
+                  <!-- Github link -->
+                      <span class="link-block">
+                        <a href="https://github.com/huijieZH/Diffusion-Model-Generalizability" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                      </span>
+
+                  <!-- ArXiv abstract Link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2409.02426" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                        </a>
+                      </span>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="display: flex; justify-content: center; gap: 50px;">
+        <div>
+          <img src="static/images/unionspace.jpg" width="500"/>
+          <p class="has-text-centered"><b>(a)</b></p>
+        </div>
+        <div>
+          <img src="static/images/MoG-visual.jpg" width="250"/>
+          <p class="has-text-centered"><b>(b)</b></p>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <b>(a) Visualization of the union of manifold structure of image data. (b) Visualization of mixture of low-rank Gaussian distribution (MoLRG). This distribution is a local linearization of a union of manifolds.</b>
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent empirical studies have demonstrated that diffusion models can effectively learn the image distribution and generate new samples. Remarkably, these models can achieve this even with a small number of training samples despite a large image dimension, circumventing the curse of dimensionality. In this work, we provide theoretical insights into this phenomenon by leveraging key empirical observations: (i) the low intrinsic dimensionality of image data, (ii) a union of manifold structure of image data, and (iii) the low-rank property of the denoising autoencoder in trained diffusion models. These observations motivate us to assume the underlying data distribution of image data as a mixture of low-rank Gaussians and to parameterize the denoising autoencoder as a low-rank model according to the score function of the assumed distribution. With these setups, we rigorously show that optimizing the training loss of diffusion models is equivalent to solving the canonical subspace clustering problem over the training samples. Based on this equivalence, we further show that the minimal number of samples required to learn the underlying distribution scales linearly with the intrinsic dimensions under the above data and model assumptions. This insight sheds light on why diffusion models can break the curse of dimensionality and exhibit the phase transition from failure to success in learning distributions. Moreover, we empirically establish a correspondence between the subspaces and the semantic representations of image data, facilitating image editing. We validate these results with extensive experimental results on both simulated distributions and image datasets. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      
+      <div style="text-align: center;">
+        <h2 class="title is-3">Main Results</h2>
+        <hr/>
+        <img src="static/images/Definition1.png" width="800px"/>
+        <br><br>
+        <img src="static/images/Lemma1.png" width="800px"/>
+        <br><br>
+        <img src="static/images/Theorem1.png" width="800px"/>
+        <br><br>
+        <img src="static/images/Theorem2.png" width="800px"/>
+        <br><br>
+        <img src="static/images/Theorem3.png" width="800px"/>
+        <br><br>
+        <img src="static/images/Theorem4a.png" width="800px"/>
+
+        <img src="static/images/Theorem4b.png" width="800px"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="text-align: center;">
+        <h2 class="title is-3">Low-dimensionality of diffusion models</h2>
+        <hr/>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 50px;">
+        <div>
+          <img src="static/images/jacobian-real.png" width="400"/>
+          <p class="has-text-centered"><b>(a)</b></p>
+        </div>
+        <div>
+          <img src="static/images/jacobian-MoLRG.png" width="385"/>
+          <p class="has-text-centered"><b>(b)</b></p>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <b> Low-rank property of the DAE of trained diffusion models from (a) real dataset (b) MoLRG. </b>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="text-align: center;">
+        <h2 class="title is-3">Phase Transition</h2>
+        <hr/>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div>
+          <img src="static/images/PCA.jpg" width="200"/>
+          <p class="has-text-centered"><b>PCA</b></p>
+        </div>
+        <div>
+          <img src="static/images/PCA_diffusion.jpg" width="200"/>
+          <p class="has-text-centered"><b>Diffusion Model</b></p>
+        </div>
+        <div>
+          <img src="static/images/SC.jpg" width="200"/>
+          <p class="has-text-centered"><b>Subspace Clustering</b></p>
+        </div>
+        <div>
+          <img src="static/images/SC_diffusion.jpg" width="200"/>
+          <p class="has-text-centered"><b>Diffusion Model</b></p>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <b> Phase transition of learning the MoLRG distribution. </b>
+      </h2>
+
+      <div style="display: flex; justify-content: center;">
+        <div>
+          <img src="static/images/phase_transition_UNet_MoLRG.png" width="400"/>
+          <p class="has-text-centered"><b>MoLRG distribution</b></p>
+        </div>
+        <div>
+          <img src="static/images/phase_transition_UNet_realdata.png" width="400"/>
+          <p class="has-text-centered"><b>Real data distribution</b></p>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <b> Transition from memorization to generalization of diffusion models via U-Net. </b>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="text-align: center;">
+        <h2 class="title is-3">Semantic Direction</h2>
+        <hr/>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <div>
+          <img src="static/images/semantic-direction.jpg" width="800"/>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        <b> Correspondence between the singular vectors of the Jacobian of the DAE and semantic image attributes. </b>
+      </h2>
+</section>
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{wang2024diffusion,
+  title={Diffusion models learn low-dimensional distributions via subspace clustering},
+  author={Wang, Peng and Zhang, Huijie and Zhang, Zekai and Chen, Siyi and Ma, Yi and Qu, Qing},
+  journal={arXiv preprint arXiv:2409.02426},
+  year={2024}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
