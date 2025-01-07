@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques.">
+  <meta property="og:title" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models"/>
+  <meta property="og:description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques."/>
+  <meta property="og:url" content="https://www.huijiezh.com/reproducibility-generalizability/index.html"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/method.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models">
+  <meta name="twitter:description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/image/method.jpg">
+  <meta name="twitter:card" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="diffusion Model, watermark, low-dimensional subspace, consistency, robustness">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Shallow Diffuse</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/reproducibility.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+  </script>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/wdli/" target="_blank">Wenda Li</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.huijiezh.com/" target="_blank">Huijie Zhang</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://qingqu.engin.umich.edu/" target="_blank">Qing Qu</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- <span class="author-block">Department of Electrical and Computer Engineering, University of Michigan<br><b>ICML 2024</b><br><b>NeurIPS 2023 Workshop</b> (<b style="color: #C70039">best paper award</b>)</span> -->
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://openreview.net/forum?id=1IwoEFyErz" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/liwd190019/Shallow-Diffuse" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.21088" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/method.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Overview of Shallow Diffuse for T2I diffusion models.</b> The <em>server scenario</em> (top left) shows watermark embedding during generation using CFG, while the <em>user scenario</em> (bottom left) demonstrates post-generation watermark embedding with DDIM inversion. In both scenarios, the watermark is applied within a <em>low-dimensional subspace</em> (top right), where most of the watermark resides in the null space of  \( \boldsymbol{J}_{\boldsymbol{\theta}, t} \) due to its low dimensionality. The channel average technique is then used to produce the final watermarked image. The <em>adversarial detection</em> (bottom right) highlights the watermark's robustness, enabling the detector to retrieve the watermark even under adversarial attacks. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The widespread use of AI-generated content from diffusion models has raised significant concerns regarding misinformation and copyright infringement. Watermarking is a crucial technique for identifying these AI-generated images and preventing their misuse. In this paper, we introduce <em>Shallow Diffuse</em>, a new watermarking technique that embeds robust and invisible watermarks into diffusion model outputs. Unlike existing approaches that integrate watermarking throughout the entire diffusion sampling process, <em>Shallow Diffuse</em> decouples these steps by leveraging the presence of a low-dimensional subspace in the image generation process. This method ensures that a substantial portion of the watermark lies in the null space of this subspace, effectively separating it from the image generation process. Our theoretical and empirical analyses show that this decoupling strategy greatly enhances the consistency of data generation and the detectability of the watermark. Extensive experiments further validate that our <em>Shallow Diffuse</em> outperforms existing watermarking methods in terms of robustness and consistency. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      
+      <div style="text-align: center;">
+        <h2 class="title is-3">Limitations of Previous Methods</h2>
+        <hr/>
+        <img src="static/images/comparison.jpg" width="1000px"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Sampling variance of Tree-Ring Watermarks, RingID and Shallow Diffuse.</b> 
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      
+      <div style="text-align: center;">
+        <h2 class="title is-3">Algorithm</h2>
+        <hr/>
+        <img src="static/images/algorithm.png" width="1000px"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      
+      <div style="text-align: center;">
+        <h2 class="title is-3">Analysis</h2>
+        <hr/>
+        <img src="static/images/assumption1.png" width="1000px"/>
+        <img src="static/images/theorem1.png" width="1000px"/>
+        <img src="static/images/theorem2.png" width="1000px"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      
+      <div style="text-align: center;">
+        <h2 class="title is-3">Experiments</h2>
+        <hr/>
+        <h2 class="subtitle has-text-centered">
+          <b>Generation quality and watermark robustness under the server scenario.</b> 
+        </h2>
+
+
+        <img src="static/images/table1.png" width="750px"/>
+
+
+        <img src="static/images/visualization_stegastamp_ours_t2i.jpg" width="800px"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Visualization of Generation Consistency in Server Scenarios.</b> 
+        </h2>
+
+
+        <h2 class="subtitle has-text-centered">
+          <b>Generation consistency and watermark robustness under the user scenario.</b> 
+        </h2>
+
+        <img src="static/images/i2i-comparison.png" width="800px"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Visualization of Generation Consistency in User Scenarios.</b> 
+        </h2>
+
+        <img src="static/images/table2.png" width="1000px"/>
+
+
+        <img src="static/images/robustness_consistency_tradeoff.jpg" width="800px"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Trade-off between consistency and robustness for Tree-Ring Watermarks, RingID,
+            and Shallow Diffuse.</b> 
+        </h2>
+
+
+        <br>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <div style="display: flex; justify-content: center; gap: 50px;">
+              <div>
+                <img src="static/images/low-rank-consistent.jpg" width="500"/>
+                <p class="has-text-centered"><b>(a) Consistency</b></p>
+              </div>
+              <div>
+                <img src="static/images/low-rank-robust.jpg" width="500"/>
+                <p class="has-text-centered"><b>(b) Robustness</b></p>
+              </div>
+            </div>
+            <h2 class="subtitle has-text-centered">
+              <b> Ablation study of the watermark at different timestep \(t\).</b>
+            </h2>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{li2024shallow,
+        title={Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models},
+        author={Li, Wenda and Zhang, Huijie and Qu, Qing},
+        journal={arXiv preprint arXiv:2410.21088},
+        year={2024}}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
