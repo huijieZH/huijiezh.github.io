@@ -7,9 +7,9 @@
   <meta name="description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques.">
   <meta property="og:title" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models"/>
   <meta property="og:description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques."/>
-  <meta property="og:url" content="https://www.huijiezh.com/reproducibility-generalizability/index.html"/>
+  <meta property="og:url" content="https://www.huijiezh.com/shallow-diffuse/index.html"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/method.jpg" />
+  <meta property="og:image" content="static/images/method.jpg" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -17,7 +17,7 @@
   <meta name="twitter:title" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models">
   <meta name="twitter:description" content="In this work, we propose Shallow Diffuse, utilizing the low-dimensional subsapce in diffusion model to disentangle the watermarking and image generation process. Shallow Diffuse is both emprirically and theoretically demonstrated its robustness and consistency, outperform previous watermarking techniques.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/image/method.jpg">
+  <meta name="twitter:image" content="static/images/method.jpg">
   <meta name="twitter:card" content="Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models">
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="diffusion Model, watermark, low-dimensional subspace, consistency, robustness">
@@ -124,12 +124,13 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="static/images/method.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        <b>Overview of Shallow Diffuse for T2I diffusion models.</b> The <em>server scenario</em> (top left) shows watermark embedding during generation using CFG, while the <em>user scenario</em> (bottom left) demonstrates post-generation watermark embedding with DDIM inversion. In both scenarios, the watermark is applied within a <em>low-dimensional subspace</em> (top right), where most of the watermark resides in the null space of  \( \boldsymbol{J}_{\boldsymbol{\theta}, t} \) due to its low dimensionality. The channel average technique is then used to produce the final watermarked image. The <em>adversarial detection</em> (bottom right) highlights the watermark's robustness, enabling the detector to retrieve the watermark even under adversarial attacks. 
-      </h2>
+       <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+        <b>Overview of Shallow Diffuse for T2I diffusion models.</b> The <em>server scenario</em> (top left) illustrates watermark embedding during generation using CFG, while the <em>user scenario</em> (bottom left) demonstrates post-generation watermark embedding via DDIM inversion. In both scenarios, the watermark is applied within a <em>low-dimensional subspace</em> (top right), where most of the watermark resides in the null space of  \( \boldsymbol{J}_{\boldsymbol{\theta}, t} \) due to its low dimensionality. The <em>adversarial detection</em> (bottom right) highlights the watermark's robustness, enabling the detector to retrieve the watermark even under adversarial attacks. 
+      </div>
     </div>
   </div>
 </section>
+
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -140,7 +141,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The widespread use of AI-generated content from diffusion models has raised significant concerns regarding misinformation and copyright infringement. Watermarking is a crucial technique for identifying these AI-generated images and preventing their misuse. In this paper, we introduce <em>Shallow Diffuse</em>, a new watermarking technique that embeds robust and invisible watermarks into diffusion model outputs. Unlike existing approaches that integrate watermarking throughout the entire diffusion sampling process, <em>Shallow Diffuse</em> decouples these steps by leveraging the presence of a low-dimensional subspace in the image generation process. This method ensures that a substantial portion of the watermark lies in the null space of this subspace, effectively separating it from the image generation process. Our theoretical and empirical analyses show that this decoupling strategy greatly enhances the consistency of data generation and the detectability of the watermark. Extensive experiments further validate that our <em>Shallow Diffuse</em> outperforms existing watermarking methods in terms of robustness and consistency. 
+            The widespread use of AI-generated content from diffusion models has raised significant concerns regarding misinformation and copyright infringement. Watermarking is a crucial technique for identifying these AI-generated images and preventing their misuse. In this paper, we introduce <em>Shallow Diffuse</em>, a new watermarking technique that embeds robust and invisible watermarks into diffusion model outputs. Unlike existing approaches that integrate watermarking throughout the entire diffusion sampling process, <em>Shallow Diffuse</em> decouples these steps by leveraging the presence of a low-dimensional subspace in the image generation process. This method ensures that a substantial portion of the watermark lies in the null space of this subspace, effectively separating it from the image generation process. Our theoretical and empirical analyses show that this decoupling strategy greatly enhances the consistency of data generation and the detectability of the watermark. Extensive experiments further validate that <em>Shallow Diffuse</em> outperforms existing watermarking methods in terms of consistency.
           </p>
         </div>
       </div>
@@ -157,10 +158,11 @@
       <div style="text-align: center;">
         <h2 class="title is-3">Limitations of Previous Methods</h2>
         <hr/>
-        <img src="static/images/comparison.jpg" width="1000px"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Sampling variance of Tree-Ring Watermarks, RingID and Shallow Diffuse.</b> 
-        </h2>
+        <img src="static/images/comparison.jpg" width="800px"/>
+        <img src="static/images/robustness_consistency_tradeoff.jpg" width="800px"/>
+        <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+          <b>Comparison between <a href="https://arxiv.org/abs/2305.20030" target="_blank">Tree-Ring Watermarks</a>, <a href="https://arxiv.org/abs/2404.14055" target="_blank">RingID</a> and Shallow Diffuse.</b> (Top) On the left are the original images, and on the right are the corresponding watermarked images generated using three techniques: Tree-Ring, RingID, and Shallow Diffuse. For each technique, we sampled watermarks using two distinct random seeds and obtained the respective watermarked images. (Bottom) Trade-off between consistency (measured by PSNR, SSIM, LPIPS) and robustness (measured by TPR@1%FPR) for Tree-Ring Watermarks, RingID, and Shallow Diffuse.
+        </div>
       </div>
     </div>
   </div>
@@ -172,9 +174,9 @@
     <div class="hero-body" >
       
       <div style="text-align: center;">
-        <h2 class="title is-3">Algorithm</h2>
+        <h2 class="title is-3">Shallow Diffuse Inject Watermarks into <br> Low-dimensional Subspace</h2>
         <hr/>
-        <img src="static/images/algorithm.png" width="1000px"/>
+        <img src="static/images/algorithm.png" width="800px"/>
       </div>
     </div>
   </div>
@@ -188,9 +190,9 @@
       <div style="text-align: center;">
         <h2 class="title is-3">Analysis</h2>
         <hr/>
-        <img src="static/images/assumption1.png" width="1000px"/>
-        <img src="static/images/theorem1.png" width="1000px"/>
-        <img src="static/images/theorem2.png" width="1000px"/>
+        <img src="static/images/assumption1.png" width="800px"/>
+        <img src="static/images/theorem1.png" width="800px"/>
+        <img src="static/images/theorem2.png" width="800px"/>
       </div>
     </div>
   </div>
@@ -205,41 +207,39 @@
       <div style="text-align: center;">
         <h2 class="title is-3">Experiments</h2>
         <hr/>
-        <h2 class="subtitle has-text-centered">
-          <b>Generation quality and watermark robustness under the server scenario.</b> 
-        </h2>
+        <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+          Table 1: <b>Generation quality, consistency and watermark robustness under the server scenario.</b> <b>Bold</b> indicates the best overall performance; <u>Underline</u> denotes the best among diffusion-based methods.
+        </div>
+        <img src="static/images/table1.png" width="1000px"/>
 
 
-        <img src="static/images/table1.png" width="750px"/>
-
-
-        <img src="static/images/visualization_stegastamp_ours_t2i.jpg" width="800px"/>
-        <h2 class="subtitle has-text-centered">
+        <!-- <img src="static/images/visualization_stegastamp_ours_t2i.jpg" width="800px"/> -->
+        <!-- <h2 class="subtitle has-text-centered">
           <b>Visualization of Generation Consistency in Server Scenarios.</b> 
-        </h2>
+        </h2> -->
 
 
-        <h2 class="subtitle has-text-centered">
-          <b>Generation consistency and watermark robustness under the user scenario.</b> 
-        </h2>
-
-        <img src="static/images/i2i-comparison.png" width="800px"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Visualization of Generation Consistency in User Scenarios.</b> 
-        </h2>
-
-        <img src="static/images/table2.png" width="1000px"/>
 
 
-        <img src="static/images/robustness_consistency_tradeoff.jpg" width="800px"/>
+        <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+          Table 2: <b>Generation consistency and watermark robustness under the user scenario.</b> <b>Bold</b> indicates the best overall performance; <u>Underline</u> denotes the best among diffusion-based methods.
+        </div>
+        <img src="static/images/table2.png" width="800px"/>
+
+
+        <img src="static/images/i2i-comparison.jpg" width="1000px"/>
+        <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+          <b>Generation consistency in user scenarios.</b> We compare the visualization quality of our method against DwtDct, DwtdctSvd, RivaGAN, Stegastamp, Stable Signature, Tree Ring, Gaussian Shading, and RingID across the DiffusionDB, and COCO datasets.
+        </div>
+        <!-- <img src="static/images/robustness_consistency_tradeoff.jpg" width="800px"/>
         <h2 class="subtitle has-text-centered">
           <b>Trade-off between consistency and robustness for Tree-Ring Watermarks, RingID,
             and Shallow Diffuse.</b> 
         </h2>
 
 
-        <br>
-        <div class="container is-max-desktop">
+        <br> -->
+        <!-- <div class="container is-max-desktop">
           <div class="hero-body">
             <div style="display: flex; justify-content: center; gap: 50px;">
               <div>
@@ -255,7 +255,7 @@
               <b> Ablation study of the watermark at different timestep \(t\).</b>
             </h2>
           </div>
-        </div>
+        </div> -->
 
 
       </div>

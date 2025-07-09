@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="In this work, we propose probability flow distance (PFD), a theoretically grounded and computationally efficient metric to measure distributional generalization. by using PFD under a teacher-student evaluation protocol, we empirically uncover several key novel generalization behaviors in diffusion models.">
+  <meta property="og:title" content="Understanding Generalization in Diffusion Models via Probability Flow Distance"/>
+  <meta property="og:description" content="In this work, we propose probability flow distance (PFD), a theoretically grounded and computationally efficient metric to measure distributional generalization. by using PFD under a teacher-student evaluation protocol, we empirically uncover several key novel generalization behaviors in diffusion models."/>
+  <meta property="og:url" content="https://www.huijiezh.com/probability-flow-distance/index.html"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/mem2gen_sscd.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Understanding Generalization in Diffusion Models via Probability Flow Distance">
+  <meta name="twitter:description" content="In this work, we propose probability flow distance (PFD), a theoretically grounded and computationally efficient metric to measure distributional generalization. by using PFD under a teacher-student evaluation protocol, we empirically uncover several key novel generalization behaviors in diffusion models.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/mem2gen_sscd.jpg">
+  <meta name="twitter:card" content="Understanding Generalization in Diffusion Models via Probability Flow Distance">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="diffusion model, generalization metric, probability flow distance">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Probability Flow Distance</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/reproducibility.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+  </script>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Understanding Generalization in Diffusion Models via Probability Flow Distance
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.huijiezh.com/" target="_blank">Huijie Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://zjhuangg.github.io/" target="_blank">Zijian Huang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://chicychen.github.io/" target="_blank">Siyi Chen</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=O3Df4PwAAAAJ&hl=zh-CN" target="_blank">Jinfan Zhou</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://la0ka1.github.io/" target="_blank">Zekai Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+              <a href="https://peng8wang.github.io/" target="_blank">Peng Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://qingqu.engin.umich.edu/" target="_blank">Qing Qu</a><sup>1</sup>
+                  </span>
+              </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Department of Electrical and Computer Engineering, University of Michigan<br>
+                    <span class="author-block"><sup>2</sup>Department of Industrial and Operations Engineering, University of Michigan<br>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2505.20123" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <!-- <span class="link-block">
+                    <a href="https://github.com/liwd190019/Shallow-Diffuse" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.20123" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/mem2gen_sscd.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Overview of Shallow Diffuse for T2I diffusion models.</b> The <em>server scenario</em> (top left) shows watermark embedding during generation using CFG, while the <em>user scenario</em> (bottom left) demonstrates post-generation watermark embedding with DDIM inversion. In both scenarios, the watermark is applied within a <em>low-dimensional subspace</em> (top right), where most of the watermark resides in the null space of  \( \boldsymbol{J}_{\boldsymbol{\theta}, t} \) due to its low dimensionality. The channel average technique is then used to produce the final watermarked image. The <em>adversarial detection</em> (bottom right) highlights the watermark's robustness, enabling the detector to retrieve the watermark even under adversarial attacks. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Diffusion models have emerged as a powerful class of generative models, capable of producing high-quality samples that generalize beyond the training data.
+          However, evaluating this generalization remains challenging: theoretical metrics are often impractical for high-dimensional data, while no practical metrics rigorously measure generalization.
+          In this work, we bridge this gap by introducing <em>probability flow distance</em> (PFD), a theoretically grounded and computationally efficient metric to measure distributional generalization. Specifically, PFD quantifies the distance between distributions by comparing their noise-to-data mappings induced by the probability flow ODE.
+          Moreover, by using PFD under a teacher-student evaluation protocol, we empirically uncover several key generalization behaviors in diffusion models, including:
+            <ul style="text-align:left;">
+            <li>Scaling behavior from memorization to generalization.</li>
+            <li>Early learning and double descent training dynamics.</li>
+            <li>Bias-variance decomposition. </li>
+            </ul>
+          Beyond these insights, our work lays a foundation for future empirical and theoretical studies on generalization in diffusion models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      <div style="text-align: center;">
+        <div style="height: 40px;"></div>
+        <h2 class="title is-3">Measuring Distribution Distance via Probability Flow Distance</h2>
+        <hr/>
+        <p style="text-align: left; font-size: 1.3em;">
+          We define a metric to measure the distance between any two distributions as follows:
+        </p>
+        
+        <img src="static/images/Def1.png" width="1000px"/>
+        <div style="height: 5px;"></div>
+        <p style="text-align: left; font-size: 1.3em;">Under Definition 1, we show that PFD satisfies the axioms of a metric: </p>
+        <img src="static/images/Theorem1.png" width="1000px"/>
+        <div style="height: 5px;"></div>
+        <p style="text-align: left; font-size: 1.3em;">And PFD is guaranteed to be approximated to arbitrary precision by its empirical estimate with high probability, givem a finite number of samples:</p>
+        <img src="static/images/Theorem2.png" width="1000px"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      <div style="text-align: center;">
+        <div style="height: 40px;"></div>
+        <h2 class="title is-3">Quantifying Generalization Error of Diffusion Models</h2>
+        <hr/>
+      </div>
+      <p style="text-align: left; font-size: 1.3em;">
+        Based on PFD, we formally define memorization and generation as follows:
+      </p>
+      <img src="static/images/Def2.png" width="1000px"/>
+      <p style="text-align: left; font-size: 1.3em;">
+        To have access to underlying data distributions, we propose a teacher-student evaluation protocol to measure the generalization error of diffusion models. More details can be found in our paper.
+      </p>      
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" >
+      <div style="text-align: center;">
+        <div style="height: 40px;"></div>
+        <h2 class="title is-3">Measuring Key Generalization Behaviors in Diffusion Models</h2>
+        <hr/>
+        <p style="text-align: left; font-size: 1.3em;">
+        Based on the evaluation protocol, this section reveals several key generalization behaviors in diffusion models: (i) MtoG scaling behaviors with model capacity and training size, (ii) early learning and double descent in learning dynamics, and (iii) bias-variance trade-off of generalization error.
+        </p>  
+        <div style="height: 40px;"></div>
+        <h2 class="subtitle has-text-centered">
+          <b>Scaling Behaviors of the MtoG Transition</b> 
+        </h2>
+        <div style="height: 40px;"></div>
+        <div style="text-align: center;">
+          <img src="static/images/mem2gen_sscd.jpg" width="1000px"/>
+          <div style="font-size: 1.1em; text-align: left; margin-top: 10px; color: #444;">
+            <b>Scaling behavior in the MtoG transition.</b>
+            <span>\(\mathcal{E}_{\mathtt{mem}}\)</span> and <span>\(\mathcal{E}_{\mathtt{gen}}\)</span> plotted against <span>\(\log_2(N)\)</span> for a range of U-Net architectures (U-Net-1 to U-Net-10). Right: the same metrics plotted against <span>\(\log_2\left(\frac{N}{\sqrt{|\boldsymbol \theta|}}\right)\)</span>, where <span>\(|\boldsymbol \theta|\)</span> is the number of model parameters.
+          </div>
+        </div>
+        <div style="height: 40px;"></div>
+        <h2 class="subtitle has-text-centered">
+          <b>Early Learning and Double Descent in Learning Dynamics</b> 
+        </h2>
+        <div style="height: 40px;"></div>
+        <img src="static/images/training_dynamics_sscd.jpg" width="1000px"/>
+        <div style="text-align: left; font-size: 1.1em; margin-top: 10px; color: #444;">
+            <b>Training dynamics of diffusion models in different regimes.</b>
+            The top figure plots <span>\(\mathcal{E}_{\mathtt{mem}}\), \(\mathcal{E}_{\mathtt{gen}}\), \(\ell_{\texttt{train}}\), \(\ell_{\texttt{test}}\)</span> over training epochs for different dataset sizes: <span>\(N = 2^6\)</span> (left), <span>\(2^{12}\)</span> (middle), <span>\(2^{16}\)</span> (right). The bottom figure visualizes the generation when <span>\(N = 2^{12}\)</span>. The top row shows samples from the underlying distribution <span>\(\boldsymbol \Phi_{p_{\texttt{data}}}(\boldsymbol{x}_T)\)</span>, while the middle and bottom rows display outputs from the trained diffusion model <span>\(\boldsymbol \Phi_{p_{\boldsymbol \theta}}(\boldsymbol{x}_T)\)</span> at epoch 85 and 500, respectively.
+        </div>
+        <div style="height: 40px;"></div>
+        <h2 class="subtitle has-text-centered">
+          <b>Bias-variance Trade-off of the Generalization</b> 
+        </h2>
+        <div style="height: 40px;"></div>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+          <img src="static/images/bias_variance_sscd_figa.jpg" width="350px" style="margin-right: 20px;"/>
+          <img src="static/images/bias_variance_sscd_figb.jpg" width="560px"/>
+        </div>
+        <div style="text-align: left; font-size: 1.1em; margin-top: 10px; color: #444;">
+            <b>Bias-Variance Trade-off.</b>
+            (a) plots the generalization error <span>\(\mathcal{E}_{\mathtt{gen}}\)</span>, bias <span>\(\mathcal{E}_{\mathtt{bias}}\)</span>, and variance <span>\(\mathcal{E}_{\mathtt{var}}\)</span> across different network architectures with a fixed training sample size of <span>\(N = 2^{16}\)</span>. (b) shows <span>\(\mathcal{E}_{\mathtt{bias}}\)</span> and <span>\(\mathcal{E}_{\mathtt{var}}\)</span> as functions of the number of training samples <span>\(N\)</span> for various network architectures.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{zhang2025understanding,
+        title={Understanding Generalization in Diffusion Models via Probability Flow Distance},
+        author={Zhang, Huijie and Huang, Zijian and Chen, Siyi and Zhou, Jinfan and Zhang, Zekai and Wang, Peng and Qu, Qing},
+        journal={arXiv preprint arXiv:2505.20123},
+        year={2025}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
