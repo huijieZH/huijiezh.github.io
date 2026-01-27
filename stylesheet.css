@@ -129,3 +129,243 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* Prevent horizontal scrolling globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile responsive styles for iPhone 12 Pro and similar devices */
+@media screen and (max-width: 480px) {
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    position: relative;
+  }
+  body,
+  td,
+  th,
+  tr,
+  p,
+  a {
+    font-size: 13px;
+  }
+
+  name {
+    font-size: 24px;
+  }
+
+  heading {
+    font-size: 18px;
+  }
+
+  papertitle {
+    font-size: 13px;
+  }
+
+  /* Prevent all elements from causing overflow */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Main container adjustments */
+  table[style*="max-width:1000px"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* All tables should respect viewport */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  /* Make all table cells stack vertically on mobile */
+  table tbody tr {
+    display: block !important;
+  }
+
+  table tbody tr td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 15px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Profile section: ensure proper stacking */
+  table tbody tr td[style*="width:63%"],
+  table tbody tr td[style*="width:40%"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix percentage padding that might cause overflow */
+  td[style*="padding:2.5%"] {
+    padding: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Profile image container - center and size appropriately */
+  table tbody tr td[style*="width:40%"] {
+    text-align: center !important;
+    padding-top: 0 !important;
+  }
+
+  /* Profile image sizing */
+  table tbody tr td[style*="width:40%"] img {
+    max-width: 200px !important;
+    width: 60% !important;
+  }
+
+  /* Publication section images - full width */
+  table tbody tr td[style*="width:25%"] {
+    width: 100% !important;
+    padding: 10px 15px !important;
+    text-align: center !important;
+  }
+
+  table tbody tr td[style*="width:75%"] {
+    width: 100% !important;
+    padding: 0 15px 15px 15px !important;
+  }
+
+  /* All images in publication rows */
+  table tbody tr td img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Specific image width overrides */
+  img[width="250"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Adjust hover image containers */
+  .one {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  .two {
+    width: 100% !important;
+    height: auto !important;
+    position: absolute !important;
+  }
+
+  .one img,
+  .two img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Reduce padding in sections */
+  td[style*="padding:20px"] {
+    padding: 15px 10px !important;
+  }
+
+  /* Center align name on mobile */
+  p[style*="text-align:center"] name {
+    display: block;
+  }
+
+  /* Adjust link spacing */
+  p a {
+    word-break: break-word;
+  }
+
+  /* News section adjustments */
+  p[style*="font-size:small"] {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Handle nested tables - make them stack too */
+  table table tbody tr {
+    display: block !important;
+  }
+
+  table table tbody tr td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Profile section nested table cells */
+  table table tbody tr td[style*="width:63%"],
+  table table tbody tr td[style*="width:40%"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 15px !important;
+  }
+
+  /* Profile image in nested table */
+  table table tbody tr td[style*="width:40%"] {
+    text-align: center !important;
+    padding-top: 0 !important;
+  }
+
+  table table tbody tr td[style*="width:40%"] img {
+    max-width: 200px !important;
+    width: 60% !important;
+  }
+
+  /* Ensure main wrapper doesn't overflow */
+  table[style*="width:100%"] {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* All td elements with inline width styles */
+  td[style*="width"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+
+  /* Handle long URLs and text */
+  a {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Ensure paragraphs don't overflow */
+  p {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Fix any elements with fixed widths */
+  [style*="width"] {
+    max-width: 100% !important;
+  }
+}
