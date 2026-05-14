@@ -369,3 +369,28 @@ html, body {
     max-width: 100% !important;
   }
 }
+
+/* Working Experience section: keep logos at sensible size on mobile, wrap date below name */
+@media screen and (max-width: 480px) {
+  td[style*="text-align:center"] img {
+    width: auto !important;
+    max-width: 140px !important;
+    margin: 0 auto !important;
+  }
+
+  div[style*="display:flex"][style*="space-between"] {
+    flex-wrap: wrap !important;
+    padding-right: 0 !important;
+    row-gap: 4px;
+  }
+}
+
+/* Tablet / small laptop range: scale Working Experience logos down a touch */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  td[style*="text-align:center"] img[alt="Snap"] {
+    width: 140px !important;
+  }
+  td[style*="text-align:center"] img[alt="Google DeepMind"] {
+    width: 80px !important;
+  }
+}
